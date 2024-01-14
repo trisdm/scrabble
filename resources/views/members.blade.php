@@ -32,6 +32,11 @@
         <div class="flex justify-center">
             Members
         </div>
+        <div>
+            @foreach($members as $member)
+               {{ $member['name'] }}
+            @endforeach
+        </div>
     </div>
 </div>
 </body>

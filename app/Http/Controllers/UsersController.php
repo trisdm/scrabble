@@ -12,11 +12,11 @@ class UsersController extends Controller
 {
     //
     public function getActiveUsers() : view {
-        $results = User::where('user_type', UserType::USER)
+        $members = User::where('user_type', UserType::USER)
             ->where('user_status', UserStatus::ACTIVE)
             ->get();
-        print_r($results);
-        return View('members');
+
+        return View('members', ['members' => $members]);
     }
 
     public function deleteUser(int $userId) : view {
