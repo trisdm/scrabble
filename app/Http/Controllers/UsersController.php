@@ -19,6 +19,17 @@ class UsersController extends Controller
         return View('members', ['members' => $members]);
     }
 
+    public function viewMember(Request $request) : view {
+        $id = $request->query("id");
+
+        $member = User::where('user_type', UserType::USER)
+            ->where('user_status', UserStatus::ACTIVE)
+            ->where('id', $id)
+            ->get();
+
+        return View('viewMember', ['member' => $member]);
+    }
+
     public function deleteUser(int $userId) : view {
         $result = User::where('id', $userId)->delete();
         if($result) {

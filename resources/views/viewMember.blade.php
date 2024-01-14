@@ -30,18 +30,28 @@
 
     <div class="max-w-7xl mx-auto p-6 lg:p-8">
         <div class="flex justify-center">
-            Members
+            Member
         </div>
         <div>
+{{--            {{$member}}--}}
             <table>
-            @foreach($members as $member)
+
+            @foreach($member as $member)
                 <tr>
+                    <td>Name</td>
                     <td>
-                        <a href="view-member?id={{$member['id']}}">{{ $member['name'] }}</a>
+                        {{ $member['name'] }}
                     </td>
-                    <td>
-                        <a href="edit-member?id={{$member['id']}}">edit</a>
-                    </td>
+                </tr>
+
+                <tr>
+                    <td>Email</td>
+                    <td>{{ $member['email']}}</td>
+                </tr>
+
+                <tr>
+                    <td><td>
+                    <td><a href="edit-member?id={{$member['id']}}">edit</a></td>
                 </tr>
             @endforeach
             </table>

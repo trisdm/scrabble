@@ -33,6 +33,8 @@ Route::post("edit-member", [UsersController::class, 'handleEditMember']);
 
 Route::post("delete-member", [UsersController::class, 'deleteMember']);
 
+Route::get("view-member", [UsersController::class, 'viewMember']);
+
 Route::get("recent-games", [UsersController::class, 'getGames']);
 
 Route::get("add-game", [UsersController::class, 'addGames']);
