@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\leaderboardController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get("members", [UsersController::class, 'getActiveUsers']);
+
+Route::get("leaderboard", [LeaderboardController::class, 'getActiveUsers']);
+
+Route::get("new-member", [UsersController::class, 'newMember']);
+
+Route::post("new-member", [UsersController::class, 'handleNewMember']);
+
+Route::get("edit-member", [UsersController::class, 'editMember']);
+
+Route::post("edit-member", [UsersController::class, 'handleEditMember']);
+
+Route::post("delete-member", [UsersController::class, 'deleteMember']);
+
+Route::get("recent-games", [UsersController::class, 'getGames']);
+
+Route::get("add-game", [UsersController::class, 'addGames']);
+
+Route::post("add-game", [UsersController::class, 'handleAddGames']);
