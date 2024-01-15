@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('membergames', function (Blueprint $table) {
             $table->id();
             $table->integer('game_id');
-            $table->integer('member_id');
+            $table->integer('user_id');
             $table->integer('user_score');
             $table->boolean('winner');
             $table->timestamps();

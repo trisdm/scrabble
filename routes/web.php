@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GamesController;
 use App\Http\Controllers\leaderboardController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -35,7 +36,7 @@ Route::post("delete-member", [UsersController::class, 'handleDeleteMember']);
 
 Route::get("view-member", [UsersController::class, 'viewMember']);
 
-Route::get("recent-games", [UsersController::class, 'getGames']);
+Route::get("recent-games", [GamesController::class, 'getGames']);
 
 Route::get("add-game", [UsersController::class, 'addGames']);
 

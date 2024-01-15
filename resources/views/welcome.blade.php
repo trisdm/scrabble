@@ -22,7 +22,7 @@
                     <ul>
                         <li><a href="">Home</a></li>
                         <li><a href="members">Members</a></li>
-                        <li><a href="games">Games</a></li>
+                        <li><a href="recent-games">Games</a></li>
                         <li><a href="leaderboard">Leaderboard</a></li>
                     </ul>
                 </header>
