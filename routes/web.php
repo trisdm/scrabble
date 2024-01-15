@@ -38,6 +38,6 @@ Route::get("view-member", [UsersController::class, 'viewMember']);
 
 Route::get("recent-games", [GamesController::class, 'getGames']);
 
-Route::get("add-game", [UsersController::class, 'addGame']);
+Route::get("add-game", [GamesController::class, 'addGame']);
 
-Route::post("add-game", [UsersController::class, 'handleAddGame']);
+Route::post("add-game", [GamesController::class, 'handleAddGame']);
