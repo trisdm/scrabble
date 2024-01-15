@@ -21,7 +21,7 @@
             <ul>
                 <li><a href="">Home</a></li>
                 <li><a href="members">Members</a></li>
-                <li><a href="games">Games</a></li>
+                <li><a href="recent-games">Games</a></li>
                 <li><a href="leaderboard">Leaderboard</a></li>
             </ul>
         </header>
@@ -31,6 +31,7 @@
         <div class="flex justify-center">
             Recent games
         </div>
+        <a href="add-game">click to add a new game</a>
     </div>
 </div>
 </body>
