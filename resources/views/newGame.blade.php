@@ -91,9 +91,9 @@
                 <tr>
                     <td>Add game date</td>
                     <td>
-                        <input type="text" placeholder="DD" required> -
-                        <input type="text" placeholder="MM" required> -
-                        <input type="text" placeholder="YY" required>
+                        <input type="text" name="day" placeholder="DD" required> -
+                        <input type="text" name="month" placeholder="MM" required> -
+                        <input type="text" name="year" placeholder="YYYY" required>
                     </td>
                 </tr>
 
