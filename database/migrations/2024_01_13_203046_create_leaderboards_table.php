@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('leaderboards', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
+            $table->integer('score');
+            $table->integer('games_played');
+            $table->float('average');
             $table->timestamps();
         });
     }
