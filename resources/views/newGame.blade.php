@@ -40,7 +40,7 @@
                 <tr>
                     <td>
                         <select name="player_1_id">
-                            <option>choose a player</option>
+                            <option value="">choose a player</option>
                             @foreach($users as $user)
                                 <option value="{{$user['id']}}">{{$user['name']}}</option>
                             @endforeach
@@ -52,7 +52,7 @@
                 <tr>
                     <td>
                         <select name="player_2_id">
-                            <option>choose a player</option>
+                            <option value="">choose a player</option>
                             @foreach($users as $user)
                                 <option value="{{$user['id']}}">{{$user['name']}}</option>
                             @endforeach
@@ -64,7 +64,7 @@
                 <tr>
                     <td>
                         <select name="player_3_id">
-                            <option>choose a player</option>
+                            <option value="">choose a player</option>
                             @foreach($users as $user)
                                 <option value="{{$user['id']}}">{{$user['name']}}</option>
                             @endforeach
@@ -78,7 +78,7 @@
                 <tr>
                     <td>
                         <select name="player_4_id">
-                            <option>choose a player</option>
+                            <option value="">choose a player</option>
                             @foreach($users as $user)
                                 <option value="{{$user['id']}}">{{$user['name']}}</option>
                             @endforeach
