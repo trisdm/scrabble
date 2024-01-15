@@ -17,9 +17,18 @@ class GamesController extends Controller
 {
     //
     public function getGames() : View {
-        $array = Game::all();
-        print_r($array);
-        return View ('recentGames');
+        $games = Game::with('memberGames')->get();
+        $index = 0;
+        foreach($games as $game) {
+            $index2 = 0;
+            foreach($game->memberGames as $member) {
+                $user = User::where('id', $member['user_id'])->get();
+                $games[$index]['memberGames'][$index2]['name'] = $user[0]['name'];
+                $index2++;
+            }
+            $index++;
+        }
+        return View ('recentGames', ['games' => $games]);
     }
 
     public function addGame() : View {
@@ -170,7 +179,7 @@ class GamesController extends Controller
 
 
                 $leaderBoard = Leaderboard::where('user_id', $userId)->get();
-                if(empty($leaderBoard->items)) {
+                if($leaderBoard->isEmpty()) {
                     Leaderboard::insert([
                         'user_id' => $userId,
                         'score' => $score,
@@ -178,7 +187,8 @@ class GamesController extends Controller
                         'average' => $score * 1.00
                     ]);
                 } else {
-                    $l = $leaderBoard->items[0];
+
+                    $l = $leaderBoard[0];
                     $currentScore = $l['score'];
                     $gamesPlayed = $l['games_played'] + 1;
 

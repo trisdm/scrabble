@@ -32,6 +32,13 @@
             Recent games
         </div>
         <a href="add-game">click to add a new game</a>
+
+        <ul>
+            @foreach($games as $game)
+            <li>{{ $game }}</li>
+            @endforeach
+
+        </ul>
     </div>
 </div>
 </body>
