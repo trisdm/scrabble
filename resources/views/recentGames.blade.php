@@ -35,7 +35,28 @@
 
         <ul>
             @foreach($games as $game)
-            <li>{{ $game }}</li>
+            <li>
+
+                Game id {{ $game['id'] }} was Played on {{ str_replace("00:00:00", "", $game['date']) }}
+                <br>
+
+                @foreach($game['memberGames'] as $member)
+                    @if($member['winner'])
+                        {{ $member['name'] }} was the winner!!
+                        <br>
+                    @endif
+
+
+                @endforeach
+
+                    Players @foreach($game['memberGames'] as $member)
+                            {{ $member['name'] }} scored  {{ $member['user_score'] }}
+
+
+                            <br>
+                @endforeach
+                <hr>
+            </li>
             @endforeach
 
         </ul>
