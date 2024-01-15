@@ -26,8 +26,53 @@ class GamesController extends Controller
         return View('newGame', ['users' => $users]);
     }
 
-    public function handleAddGame(Request $request) : RedirectResponse
+    public function handleAddGame(Request $request) : RedirectResponse | View
     {
+        $playerId1 =  $request->input('player_1_id');
+        $playerId2 =  $request->input('player_2_id');
+        $playerId3 =  $request->input('player_3_id');
+        $playerId4 =  $request->input('player_4_id');
 
+        $playerScore1 =  $request->input('player_1_score');
+        $playerScore2 =  $request->input('player_2_score');
+        $playerScore3 =  $request->input('player_3_score');
+        $playerScore4 =  $request->input('player_4_score');
+
+        if($playerId1 != "") {
+            if($playerId1 == $playerId2 || $playerId1 == $playerId3 || $playerId1 == $playerId4)
+            {
+                $error = true;
+            }
+        }
+
+
+        if($playerId2 != "") {
+            if($playerId2 == $playerId1 || $playerId2 == $playerId3 || $playerId2 == $playerId4)
+            {
+                $error = true;
+            }
+        }
+
+        if($playerId3 != "") {
+            if($playerId3 == $playerId1 || $playerId3 == $playerId2 || $playerId3 == $playerId4)
+            {
+                $error = true;
+            }
+        }
+
+        if($playerId4 != "") {
+            if($playerId4 == $playerId1 || $playerId4 == $playerId2 || $playerId4 == $playerId3)
+            {
+                $error = true;
+            }
+        }
+
+        if($error){
+            return View('add-game');
+        } else {
+
+             return redirect('recent-games');
+
+        }
     }
 }
