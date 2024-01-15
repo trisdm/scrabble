@@ -31,7 +31,7 @@ Route::get("edit-member", [UsersController::class, 'editMember']);
 
 Route::post("edit-member", [UsersController::class, 'handleEditMember']);
 
-Route::post("delete-member", [UsersController::class, 'deleteMember']);
+Route::post("delete-member", [UsersController::class, 'handleDeleteMember']);
 
 Route::get("view-member", [UsersController::class, 'viewMember']);
 

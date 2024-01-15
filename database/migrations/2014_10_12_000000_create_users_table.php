@@ -21,9 +21,9 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->enum('user_type', [UserType::ADMIN->value, UserType::USER->value])->
-            default(UserType::USER->value);
+                default(UserType::USER->value);
             $table->enum('user_status', [UserStatus::ACTIVE->value, UserStatus::DELETED->value])->
-            default(UserStatus::ACTIVE->value);
+                default(UserStatus::ACTIVE->value);
             $table->integer('average_score')->nullable();
             $table->integer('highest_score')->nullable();
             $table->integer('highest_score_game_id')->nullable();
