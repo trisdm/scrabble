@@ -24,7 +24,6 @@ return new class extends Migration
                 default(UserType::USER->value);
             $table->enum('user_status', [UserStatus::ACTIVE->value, UserStatus::DELETED->value])->
                 default(UserStatus::ACTIVE->value);
-            $table->integer('average_score')->nullable();
             $table->integer('highest_score')->nullable();
             $table->integer('highest_score_game_id')->nullable();
             $table->dateTime('highest_score_date')->nullable();
