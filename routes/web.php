@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\GamesController;
-use App\Http\Controllers\leaderboardController;
+use App\Http\Controllers\LeaderboardsController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,11 +18,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+Route::get("leaderboard", [LeaderboardsController::class, 'showLeaderboard']);
 
 Route::get("members", [UsersController::class, 'getActiveUsers']);
-
-Route::get("leaderboard", [LeaderboardController::class, 'getActiveUsers']);
 
 Route::get("new-member", [UsersController::class, 'newMember']);
 

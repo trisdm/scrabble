@@ -7,6 +7,7 @@ use App\Enums\UserType;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 
 class UsersController extends Controller
@@ -61,5 +62,21 @@ class UsersController extends Controller
         return redirect('/members');
     }
 
+    public function newMember() :View
+    {
+        return View('newMember');
+    }
 
+    public function handleNewMember(Request $request) :RedirectResponse
+    {
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $password = $request->input('password');
+        User::create([
+            'name' => $name,
+            'email'=> $email,
+            'password' => Hash::make($password)
+        ]);
+        return redirect('members');
+    }
 }
